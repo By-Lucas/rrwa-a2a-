@@ -1,0 +1,123 @@
+.agent-execute {
+  background: #f8fbff;
+  border-radius: 16px;
+  box-shadow: 0 2px 24px #dde6f7;
+  max-width: 900px;
+  margin: 48px auto 0 auto;
+  padding: 38px 36px 32px 36px;
+  font-size: 1.18rem;
+  display: flex;
+  flex-direction: column;
+}
+.agent-execute h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 32px;
+  width: 100%;
+}
+
+.agent-execute__form-container {
+  background: #f6f8fb;
+  border-radius: 11px;
+  margin-bottom: 16px;
+  padding: 22px 18px 12px 18px;
+  box-shadow: 0 2px 12px #e6e9f236;
+  display: flex;
+  flex-direction: column;
+}
+
+.agent-execute__form-container label {
+  background: #f6f8fb;
+  margin-bottom: 10px;
+  font-size: 1.06rem;
+  display: flex;
+}
+
+
+.agent-execute label {
+  font-weight: 500;
+  color: #4a4a4a;
+  margin-right: 8px;
+  min-width: 75px;
+  flex-shrink: 0;
+  font-size: 1.07rem;
+}
+
+.agent-execute select, .agent-execute input[type="text"], .agent-execute textarea {
+  border: 1.3px solid #d4d8ee;
+  border-radius: 7px;
+  padding: 10px 13px;
+  font-size: 1rem;
+  transition: border-color 0.18s;
+  height: 43px;
+  min-height: 43px;
+  max-height: 43px;
+  width: 100%;
+  box-sizing: border-box;
+  background: #fff;
+}
+
+.agent-execute select:focus, .agent-execute input:focus, .agent-execute textarea:focus {
+  outline: none;
+  border-color: #2988f6;
+}
+
+.agent-description {
+  color: #555;
+  font-size: 0.97rem;
+  margin-top: 4px;
+  margin-bottom: 10px;
+  background: #f2f6ff;
+  border-radius: 6px;
+  padding: 7px 11px;
+  word-break: break-word;
+}
+
+.agent-execute button {
+  background: #2988f6;
+  color: #fff;
+  font-weight: 700;
+  padding: 10px 36px;
+  border-radius: 7px;
+  border: none;
+  margin-top: 5px;
+  font-size: 1.12rem;
+  cursor: pointer;
+  box-shadow: 0 1px 6px #dde6f7;
+  transition: background 0.17s;
+}
+.agent-execute button:disabled {
+  opacity: 0.65;
+  background: #5ca3fa;
+  cursor: default;
+}
+
+.agent-execute .response-block {
+  margin-top: 32px;
+  background: #ecf3fa;
+  border-radius: 10px;
+  padding: 22px;
+  box-shadow: 0 1px 7px #dde6f7;
+  font-family: "Fira Mono", "Menlo", "Monaco", "Consolas", "monospace";
+  font-size: 1.09rem;
+  color: #22384b;
+  overflow-x: auto;
+  white-space: pre-wrap;
+}
+.agent-execute .response-block b {
+  display: block;
+  margin-bottom: 10px;
+  color: #2988f6;
+  font-size: 1.16rem;
+}
+
+@media (max-width: 800px) {
+  .agent-execute {
+    max-width: 98vw;
+    padding: 18px 2vw;
+  }
+  .agent-execute__form-container {
+    max-width: 99vw;
+    padding: 18px 6px 14px 6px;
+  }
+}

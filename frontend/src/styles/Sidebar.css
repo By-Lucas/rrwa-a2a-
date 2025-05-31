@@ -1,0 +1,107 @@
+.sidebar {
+  width: 220px;
+  background: #fff;
+  box-shadow: 1px 0 8px #e6e9f2;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s;
+}
+.sidebar__logo {
+  font-size: 1.6rem;
+  font-weight: bold;
+  padding: 28px 32px 10px 32px;
+  color: #222;
+  letter-spacing: 1px;
+  display: flex;
+  align-items: center;
+}
+.sidebar__logo-main { color: #2988f6; }
+.sidebar__logo-plus { color: #444; }
+.sidebar__nav {
+  display: flex;
+  flex-direction: column;
+  margin-top: 12px;
+}
+.sidebar__link {
+  text-decoration: none;
+  color: #444;
+  font-size: 1.14rem;
+  font-weight: 500;
+  padding: 12px 32px;
+  border-radius: 7px;
+  margin: 3px 8px;
+  transition: background 0.15s;
+}
+.sidebar__link.active,
+.sidebar__link:hover {
+  background: #f0f4ff;
+  color: #1568e7;
+}
+.sidebar__toggle {
+  display: none;
+  position: fixed;
+  left: 15px;
+  top: 18px;
+  z-index: 210;
+  background: transparent;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+/* Mobile/Tablet Responsivo */
+@media (max-width: 900px) {
+  .sidebar {
+    transform: translateX(-105%);
+    box-shadow: none;
+  }
+  .sidebar.open {
+    transform: translateX(0);
+    box-shadow: 2px 0 14px #e6e9f2;
+  }
+  .sidebar__toggle {
+    display: block;
+    position: absolute;
+    left: 18px;
+    top: 24px;
+    z-index: 211;
+  }
+  .sidebar__logo {
+    padding-left: 56px !important; /* espaço pro hamburguer */
+    font-size: 1.16rem;
+    padding-top: 22px;
+    padding-bottom: 5px;
+    padding-right: 18px;
+    display: flex;
+    align-items: center;
+  }
+  .sidebar__backdrop {
+    position: fixed;
+    z-index: 99;
+    top: 0; left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(30,40,60,0.25);
+  }
+  .sidebar__nav {
+    margin-top: 2px;
+  }
+  .sidebar__link {
+    font-size: 1.07rem;
+    padding: 10px 18px;
+  }
+}
+
+@media (max-width: 600px) {
+  .sidebar {
+    width: 85vw;
+    min-width: 0;
+    max-width: 330px;
+    padding-top: 8px;
+  }
+}
