@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: rabbitmq
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: rabbitmq
+  template:
+    metadata:
+      labels:
+        app: rabbitmq
+    spec:
+      containers:
+        - name: rabbitmq
+          image: rabbitmq:3-management        # Com painel de administração incluso
+          ports:
+            - containerPort: 5672            # Porta padrão para conexões (AMQP)
+            - containerPort: 15672           # Porta painel web
+          env:
+            - name: RABBITMQ_DEFAULT_USER
+              value: "rabbitmq"
+            - name: RABBITMQ_DEFAULT_PASS
+              valueFrom:
+                secretKeyRef:
+                  name: tk-secret
+                  key: RABBITMQ_PASSWORD
+          resources:
+            requests:
+              cpu: "500m"                    # Reserva 0.5 CPU
+              memory: "512Mi"
+            limits:
+              cpu: "1000m"                   # Até 1 CPU
+              memory: "1Gi"

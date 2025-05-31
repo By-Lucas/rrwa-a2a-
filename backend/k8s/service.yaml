@@ -1,0 +1,29 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: tk-app-service
+spec:
+  selector:
+    app: tk-app
+  ports:
+    - protocol: TCP
+      port: 80            # Porta que será exposta
+      targetPort: 8000    # Porta do container
+  type: LoadBalancer         # Só dentro do cluster (mude para LoadBalancer para expor publicamente)
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: rabbitmq-service
+spec:
+  selector:
+    app: rabbitmq
+  ports:
+    - protocol: TCP
+      port: 5672
+      targetPort: 5672
+    - protocol: TCP
+      port: 15672
+      targetPort: 15672
+  type: LoadBalancer

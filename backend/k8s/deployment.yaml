@@ -1,0 +1,44 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: tk-app
+spec:
+  replicas: 3  # Quantos pods quer rodando (ajuste conforme seu cluster/CPU)
+  selector:
+    matchLabels:
+      app: tk-app
+  template:
+    metadata:
+      labels:
+        app: tk-app
+    spec:
+      containers:
+        - name: tk-app
+          image: seu-registro/tk-app:latest  # Exemplo: ghcr.io/usuario/tk-app:latest
+          ports:
+            - containerPort: 8000           # Porta interna do app
+          envFrom:
+            - configMapRef:
+                name: tk-config             # Carrega configs públicas
+            - secretRef:
+                name: tk-secret             # Carrega segredos
+          resources:
+            requests:
+              cpu: "500m"                   # Reserva 1.5 CPUs (ajuste conforme carga e cluster)
+              memory: "512Mi"               # Reserva 1 GB RAM por pod
+            limits:
+              cpu: "1500m"                  # Máximo 2 CPUs por pod
+              memory: "2Gi"                 # Máximo 2 GB RAM por pod
+          # readinessProbe e livenessProbe ajudam o K8s a saber se o app está ok
+          readinessProbe:
+            httpGet:
+              path: /health  # Troque pela rota health check da sua API
+              port: 8000
+            initialDelaySeconds: 10
+            periodSeconds: 10
+          livenessProbe:
+            httpGet:
+              path: /health
+              port: 8000
+            initialDelaySeconds: 30
+            periodSeconds: 15

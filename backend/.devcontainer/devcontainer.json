@@ -1,0 +1,15 @@
+{
+    "name": "RRWA Platform Dev",
+    "dockerComposeFile": "../dev/docker-compose.yml",
+    "service": "web",
+    "workspaceFolder": "/app",
+    "settings": {
+      "python.pythonPath": "/usr/local/bin/python"
+    },
+    "extensions": [
+      "ms-python.python",
+      "ms-azuretools.vscode-docker"
+    ],
+    "postCreateCommand": "pip install --upgrade pip && pip install -r requirements.txt"
+  }
+  

@@ -1,0 +1,58 @@
+Quais problemas reais das empresas resolvemos?
+1. Integração de sistemas legados e modernos
+
+Empresas possuem ERPs antigos, CRMs modernos, sistemas de logística, planilhas, APIs e não conseguem integrar tudo de forma fácil. O RRWA conecta tudo via agentes plugáveis.
+
+2. Automação de processos repetitivos
+
+Agentes executam tarefas rotineiras: leitura de emails, atualização de banco de dados, coleta de indicadores, geração de relatórios, disparo de notificações etc.
+
+3. Monitoramento e resposta em tempo real
+
+Agentes monitoram eventos (financeiros, operacionais, de atendimento) e respondem automaticamente, acionando responsáveis ou ajustando fluxos sem intervenção manual.
+
+4. Orquestração de fluxos inteligentes
+
+É possível criar fluxos que vão de A a Z, envolvendo vários sistemas, decisões e integrações, sem retrabalho nem dependência de um único fornecedor.
+
+5. Flexibilidade e crescimento
+
+Precisa de um novo agente? É só plugar, sem alterar o core.
+
+Crescimento horizontal: integra novas unidades, sistemas, APIs, sensores, etc.
+
+6. Observabilidade e controle
+
+Dashboard central para acompanhar tudo: logs, falhas, alertas, históricos, consumo.
+
+7. Redução de custos e aumento da eficiência
+
+Menos retrabalho manual, menos erros, mais agilidade nos processos e decisões.
+
+Público Alvo / Aplicações
+Empresas de médio e grande porte (indústria, varejo, financeiro, saúde, logística).
+
+Universidades (projetos de pesquisa, integração de laboratórios, smart campus).
+
+Startups e integradoras (produtos SaaS, soluções white-label).
+
+2. Stack e Ferramentas Sugeridas
+Linguagem: Python 3.11+
+
+Framework web/API: FastAPI
+
+Banco: PostgreSQL (Cloud SQL)
+
+Mensageria/eventos: Google Pub/Sub, Redis ou RabbitMQ
+
+Containers: Docker, Docker Compose
+
+Infra Cloud: GCP (Google Kubernetes Engine, Cloud Run)
+
+Dev Experience: Devcontainer (VSCode), Makefile, Poetry ou Pip
+
+Testes: Pytest
+
+CI/CD: GitHub Actions ou GitLab CI
+
+Monitoramento: Google Cloud Monitoring/Logging
