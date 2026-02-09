@@ -67,8 +67,8 @@ Acesse: [http://localhost:3000](http://localhost:3000) or [http://localhost:5173
 ## Contato e Comunidade
 
 * WhatsApp: [Clique aqui para falar](https://wa.me/74981199190)
-* LinkedIn: [Seu LinkedIn](https://linkedin.com/in/lucastk)
-* GitHub: [Seu GitHub](https://github.com/By-Lucas)
+* LinkedIn: [LinkedIn](https://linkedin.com/in/lucastk)
+* GitHub: [GitHub](https://github.com/By-Lucas)
 * Email: [tekertudo@gmail.com](mailto:tekertudo@gmail.com)
 
 ---
